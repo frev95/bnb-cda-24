@@ -23,7 +23,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 900;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -58,14 +57,18 @@ body {
     line-height: 1;
     font-weight: 900;
 }
-
 .subtitle {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: .25vw;
     -webkit-text-stroke-color: #fff;
     transform: rotate(-180deg);
 }
-
 .subtitle-reverse {
     transform: inherit;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 2rem;
 }
