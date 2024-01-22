@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\FavoriteType;
 use App\Repository\RoomRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ class RoomController extends AbstractController
     public function index(
         RoomRepository $roomRepository,
         PaginatorInterface $paginator,
-        Request $request
+        Request $request,
     ): Response
     {
         $pagination = $paginator->paginate(
@@ -25,8 +26,11 @@ class RoomController extends AbstractController
             12 // Items per page
         );
 
+        $form = $this->createForm(FavoriteType::class);
+
         return $this->render('room/index.html.twig', [
             'rooms' => $pagination,
+            'checkFavorite' => $form,
             'hostRooms' => $roomRepository->findBy(
                 ['host' => $this->getUser()]
                 )
