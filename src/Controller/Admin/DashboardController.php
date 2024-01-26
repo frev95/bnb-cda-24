@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Room;
+use App\Entity\Review;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -46,5 +47,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::linkToCrud('Rooms', 'fas fa-cubes', Room::class);
+        yield MenuItem::linkToCrud('Reviews', 'fas fa-star', Review::class);
     }
 }

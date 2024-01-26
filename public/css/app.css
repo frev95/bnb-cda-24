@@ -73,7 +73,8 @@ body {
 /* Footer */
 footer {
     position: fixed;
-    bottom: 2rem;
+    z-index: 100;
+    bottom: 0;
 }
 
 /* Room Card */
@@ -91,10 +92,4 @@ footer {
 
 .active>.page-link, .page-link.active {
     background-color: var(--custom-dark);
-}
-
-/* Account page */
-.bnb-height {
-    max-height: 400px;
-
 }
